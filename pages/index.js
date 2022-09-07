@@ -1,9 +1,25 @@
 import Button from "../components/button";
+import Icon from "../components/icon";
 import Paragraph from "../components/paragraph";
 import Section from "../components/section";
 import Title from "../components/title";
 
-export default function Home() {
+import { useTranslation } from "next-i18next";
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import LanguageSwitch from "../components/languageSwitch";
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale)),
+    },
+  };
+}
+
+const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Section>
@@ -15,7 +31,13 @@ export default function Home() {
         </Paragraph>
         <Button />
         <Button isInvert />
+        <Icon src="/react.svg" width={50} height={50} />
+        <p>{t("title")}</p>
+
+        <LanguageSwitch />
       </Section>
     </>
   );
-}
+};
+
+export default Home;
