@@ -9,8 +9,8 @@ const LanguageSwitch = () => {
 
   const lang =
     locale === "en"
-      ? { code: "fr", label: "Francais" }
-      : { code: "en", label: "English" };
+      ? { code: "fr", label: "English" }
+      : { code: "en", label: "Français" };
 
   const changeLocale = () => {
     const { pathname, asPath } = router;

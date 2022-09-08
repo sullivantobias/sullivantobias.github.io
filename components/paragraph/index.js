@@ -4,10 +4,10 @@ import classNames from "classnames";
 
 import style from "./paragraph.module.scss";
 
-const Paragraph = ({ children, className }) => (
+const Paragraph = ({ children, isInvert }) => (
   <p
     className={classNames(style.Paragraph, {
-      [className]: className,
+      [style.isInvert]: isInvert,
     })}
   >
     {children}
