@@ -1,0 +1,76 @@
+@import "../../../../utils/styles/variables.scss";
+
+.Burger {
+  width: 40px;
+  height: 22px;
+  background: none;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+  margin-left: auto;
+
+  span {
+    position: absolute;
+    left: 50%;
+    width: 26px;
+    height: 2px;
+    background-color: $black;
+
+    &:nth-child(1) {
+      top: 0;
+      transform: translateX(-50%) translateY(0);
+      transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s,
+        transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+    }
+
+    &:nth-child(2) {
+      top: 8px;
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+
+    &:last-child {
+      top: 16px;
+      transform: translateX(-50%) translateY(0);
+      transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s,
+        transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+    }
+  }
+}
+
+.Open {
+  span {
+    &:nth-child(1) {
+      top: 50%;
+      transform: translateX(-50%) translateY(0) rotate(45deg);
+      transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87),
+        transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:last-child {
+      top: 50%;
+      transform: translateX(-50%) translateY(0) rotate(-45deg);
+      transition: bottom 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87),
+        transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+    }
+  }
+}
+
+.Menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  z-index: 3;
+}

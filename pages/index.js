@@ -1,14 +1,15 @@
-import Button from "../components/button";
-import Icon from "../components/icon";
-import Paragraph from "../components/paragraph";
-import Section from "../components/section";
-import Title from "../components/title";
-import LanguageSwitch from "../components/languageSwitch";
+import Button from "../components/atoms/button";
+import Icon from "../components/atoms/icon";
+import Paragraph from "../components/atoms/paragraph";
+import Section from "../components/atoms/section";
+import Title from "../components/atoms/title";
+import Card from "../components/atoms/card";
+
+import Header from "../components/molecules/header";
 
 import { useTranslation } from "next-i18next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Card from "../components/card";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <Section>
         <Title title="Sullivan Tobias" />
         <Title title="I'm a Frontend Developer" tag={2} />
@@ -34,8 +36,6 @@ const Home = () => {
         <Button isInvert />
         <Icon src="/react.svg" width={50} height={50} />
         <p>{t("title")}</p>
-
-        <LanguageSwitch />
       </Section>
 
       <Section asYPadding isInvert>

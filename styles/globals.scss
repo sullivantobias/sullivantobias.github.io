@@ -1,8 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
+@import "../utils/styles/variables.scss";
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Lato, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Bangers";
+  letter-spacing: 2px;
 }
 
 a {
@@ -15,11 +20,11 @@ a {
 }
 
 h1 {
-  font-family: Playfair Display;
   line-height: 4rem;
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 20px;
+  text-shadow: 4px 4px 0px lightgray, 6px 6px 0px $black;
 }
 
 h2 {

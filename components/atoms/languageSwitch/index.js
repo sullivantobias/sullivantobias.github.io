@@ -1,6 +1,7 @@
 import React from "react";
-import { i18n } from "next-i18next";
 import { useRouter } from "next/router";
+
+import style from "./languageSwitch.module.scss";
 
 const LanguageSwitch = () => {
   const router = useRouter();
@@ -20,7 +21,11 @@ const LanguageSwitch = () => {
     });
   };
 
-  return <button onClick={changeLocale}>{lang.label}</button>;
+  return (
+    <button className={style.LanguageSwitch} onClick={changeLocale}>
+      {lang.label}
+    </button>
+  );
 };
 
 export default LanguageSwitch;
