@@ -1,8 +1,9 @@
 @import "../../../utils/styles/variables.scss";
 
 .Title {
+  flex-basis: 100%;
   color: $black;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .isInvert {
@@ -12,7 +13,6 @@
 .isUnderlined {
   background-color: $yellow;
   height: 4px;
-  margin: 0;
+  margin: 8px 0 0;
   width: 50px;
-  margin-bottom: 32px;
 }

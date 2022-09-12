@@ -1,0 +1,21 @@
+@import "../../../utils/styles/variables.scss";
+
+.Email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $black;
+  border: 3px solid $white;
+  padding: 10px;
+  cursor: pointer;
+  width: 300px;
+  border-radius: 12px;
+  background-color: $white;
+  margin: 24px 12px 0 0;
+
+  transition: all 0.3s;
+
+  &:hover {
+    padding-left: 24px;
+  }
+}

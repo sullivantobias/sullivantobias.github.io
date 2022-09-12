@@ -4,12 +4,14 @@ import Paragraph from "../components/atoms/paragraph";
 import Section from "../components/atoms/section";
 import Title from "../components/atoms/title";
 import Card from "../components/atoms/card";
+import Social from "../components/atoms/social";
+import CopyEmail from "../components/atoms/email/copy";
 
 import Header from "../components/molecules/header";
 
 import { useTranslation } from "next-i18next";
-
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import SendEmail from "../components/atoms/email/send";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -44,35 +46,7 @@ const Home = () => {
       </Section>
 
       <Section asYPadding>
-        <Title tag={2} isUnderlined title="Skills" />
-
-        <Title tag={3} title="Web Integration" />
-        <Icon width={50} height={50} src="/html5.svg" />
-        <Icon width={50} height={50} src="/css3.svg" />
-
-        <Title tag={3} title="Front-end" />
-        <Icon width={50} height={50} src="/js.svg" />
-        <Icon width={50} height={50} src="/react.svg" />
-        <Icon width={50} height={50} src="/redux.svg" />
-        <Icon width={50} height={50} src="/mobx.svg" />
-        <Icon width={50} height={50} src="/handlebars.svg" />
-
-        <Title tag={3} title="Back-end" />
-        <Icon width={50} height={50} src="/nodejs.svg" />
-
-        <Title tag={3} title="Content Management" />
-        <Icon width={50} height={50} src="/aem.svg" />
-
-        <Title tag={3} title="Others" />
-        <Icon width={50} height={50} src="/ts.svg" />
-        <Icon width={50} height={50} src="/graphql.svg" />
-        <Icon width={50} height={50} src="/jest.svg" />
-        <Icon width={50} height={50} src="/nextjs.svg" />
-        <Icon width={50} height={50} src="/mongodb.svg" />
-      </Section>
-
-      <Section asYPadding isInvert>
-        <Title tag={2} isUnderlined isInvert title="Small Projects" />
+        <Title tag={2} isUnderlined title="Small Projects" />
         <Card src="/crypto.png" label="Crypto Tracker" />
         <Card src="/solar.png" label="Solar System" />
         <Card src="/chat.png" label="Firebase Chat" />
@@ -82,12 +56,51 @@ const Home = () => {
         <Card src="/url.png" label="Url Shortener" />
       </Section>
 
-      <Section asYPadding>
-        <Title tag={2} isUnderlined title="Worked for" />
+      <Section asYPadding isInvert>
+        <Title tag={2} isInvert isUnderlined title="Skills" />
+
+        <Title tag={3} isInvert title="Web Integration" />
+        <Icon width={50} height={50} src="/html5.svg" />
+        <Icon width={50} height={50} src="/css3.svg" />
+
+        <Title tag={3} isInvert title="Front-end" />
+        <Icon width={50} height={50} src="/js.svg" />
+        <Icon width={50} height={50} src="/react.svg" />
+        <Icon width={50} height={50} src="/redux.svg" />
+        <Icon width={50} height={50} src="/mobx.svg" />
+        <Icon width={50} height={50} src="/handlebars.svg" />
+
+        <Title tag={3} isInvert title="Back-end" />
+        <Icon width={50} height={50} src="/nodejs.svg" />
+
+        <Title tag={3} isInvert title="Content Management" />
+        <Icon width={50} height={50} src="/aem.svg" />
+
+        <Title tag={3} isInvert title="Others" />
+        <Icon width={50} height={50} src="/ts.svg" />
+        <Icon width={50} height={50} src="/graphql.svg" />
+        <Icon width={50} height={50} src="/jest.svg" />
+        <Icon width={50} height={50} src="/nextjs.svg" />
+        <Icon width={50} height={50} src="/mongodb.svg" />
       </Section>
 
-      <Section asYPadding isInvert>
-        <Title tag={2} isUnderlined isInvert title="Contact" />
+      <Section asYPadding>
+        <Title tag={2} isUnderlined title="Work experience" />
+        <Card src="/renault.png" label="Renault" />
+        <Card src="/radley.png" label="Radley" />
+        <Card src="/airbus.png" label="Airbus" />
+      </Section>
+
+      <Section asYPadding>
+        <Title tag={2} isUnderlined title="Social networks" />
+        <Social icon="/github.svg" />
+        <Social icon="/linkedin.svg" />
+      </Section>
+
+      <Section isInvert asYPadding>
+        <Title tag={2} isInvert isUnderlined title="Contact" />
+        <CopyEmail />
+        <SendEmail />
       </Section>
     </>
   );

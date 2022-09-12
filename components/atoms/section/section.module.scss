@@ -1,6 +1,8 @@
 @import "../../../utils/styles/variables.scss";
 
 .Section {
+  display: flex;
+  flex-wrap: wrap;
   margin: 124px 0;
   padding: 0 24px;
 }
