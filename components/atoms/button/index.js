@@ -3,14 +3,15 @@ import React from "react";
 
 import style from "./button.module.scss";
 
-const Button = ({ isInvert }) => (
-  <button
+const Button = ({ isInvert, label, href }) => (
+  <a
+    href={`#${href}`}
     className={classNames(style.Button, {
       [style.isInvert]: isInvert,
     })}
   >
-    Button
-  </button>
+    {label}
+  </a>
 );
 
 export default Button;

@@ -1,24 +1,20 @@
 @import "../../../utils/styles/variables.scss";
+@import "../../../utils/styles/mixins.scss";
 
 .LanguageSwitch {
-  width: 100px;
+  width: 150px;
   height: 40px;
   font-size: 1.2rem;
   margin: auto;
-  cursor: pointer;
   border: 3px solid $black;
-  background: linear-gradient(to right, black 50%, white 0%);
-  background-repeat: repeat;
-  background-size: 200%;
-  background-position: 100% 0;
-  box-shadow: 0.4rem 0.4rem 0 black;
-  transition: all 0.3s;
+  cursor: pointer;
+
+  @include retro-shadow-init($isInvert: true);
 
   &:hover {
-    color: white;
+    color: $white;
     border: none;
-    box-shadow: none;
-    background-position: 0 0;
-    transform: translate(0.4rem, 0.4rem);
+
+    @include retro-shadow-hover;
   }
 }

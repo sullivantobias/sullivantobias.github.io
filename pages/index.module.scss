@@ -1,0 +1,23 @@
+@import "../utils/styles/breakpoints.scss";
+
+.Skill {
+  flex-basis: 100%;
+
+  @include small {
+    flex-basis: 48%;
+  }
+}
+
+.firstSection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 70%;
+
+  + span {
+    display: none;
+
+    @include small {
+      display: block;
+    }
+  }
+}

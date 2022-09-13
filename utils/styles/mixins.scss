@@ -1,0 +1,34 @@
+@import "./variables.scss";
+
+@mixin retro-shadow-init(
+  $isInvert: false,
+  $boxShadowColor: $black,
+  $isCard: false
+) {
+  @if $isInvert {
+    background: linear-gradient(to right, $black 50%, $white 0%);
+  } @else if $isCard {
+    background: linear-gradient(to right, $overlay 50%, $yellow 0%);
+  } @else {
+    background: linear-gradient(to right, $yellow 50%, $black 0%);
+  }
+
+  box-shadow: 0.6rem 0.6rem 0 $boxShadowColor;
+  background-repeat: repeat;
+  background-size: 200%;
+  background-position: 100% 0;
+
+  transition: all 0.3s ease;
+}
+
+@mixin retro-shadow-init-simple($boxShadowColor: $black) {
+  box-shadow: 0.6rem 0.6rem 0 $boxShadowColor;
+
+  transition: all 0.3s ease;
+}
+
+@mixin retro-shadow-hover {
+  background-position: 0 0;
+  box-shadow: none;
+  transform: translate(0.6rem, 0.6rem);
+}

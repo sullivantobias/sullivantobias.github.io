@@ -4,7 +4,7 @@ import Icon from "../icon";
 
 import style from "./social.module.scss";
 
-const Social = ({ icon, text }) => {
+const Social = ({ icon }) => {
   return (
     <div className={style.Social}>
       <Icon src={icon} height={35} width={35} />

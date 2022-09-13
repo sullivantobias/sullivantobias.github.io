@@ -18,6 +18,7 @@ const LanguageSwitch = () => {
 
     router.push({ pathname }, asPath, {
       locale: lang.code,
+      scroll: false,
     });
   };
 

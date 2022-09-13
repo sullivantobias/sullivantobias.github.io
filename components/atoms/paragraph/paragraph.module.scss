@@ -2,6 +2,8 @@
 
 .Paragraph {
   color: $black;
+  max-width: 400px;
+  flex-basis: 100%;
 }
 
 .isInvert {

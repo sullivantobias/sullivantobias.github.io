@@ -1,16 +1,16 @@
 @import "../../../utils/styles/variables.scss";
 @import "../../../utils/styles/breakpoints.scss";
+@import "../../../utils/styles/mixins.scss";
 
 .Card {
   display: inline-flex;
   flex-basis: 100%;
   position: relative;
   margin: 0 32px 32px 0;
-  border: 3px solid black;
-  box-shadow: 0.6rem 0.6rem 0 $black;
+  border: 3px solid $black;
   height: 300px;
 
-  transition: all 0.3s;
+  @include retro-shadow-init-simple($boxShadowColor: $grey);
 
   @include small {
     flex-basis: 45%;
@@ -25,9 +25,7 @@
   }
 
   &:hover {
-    transform: translate(0.6rem, 0.6rem);
-    box-shadow: none;
-    background-position: 0 0;
+    @include retro-shadow-hover;
 
     img {
       transform: scale(1.2);
@@ -47,16 +45,13 @@
   position: absolute;
   left: 0;
   top: 0;
-  cursor: pointer;
-  background: linear-gradient(to right, $overlay 50%, $yellow 0%);
-  background-repeat: repeat;
-  background-size: 200%;
-  background-position: 100% 0;
   opacity: 0;
+  cursor: pointer;
 
-  transition: all 0.3s;
+  @include retro-shadow-init($isCard: true);
 
   &:hover {
+    box-shadow: none;
     background-position: 0 0;
     opacity: 1;
   }

@@ -1,4 +1,17 @@
 {
-  "title": "Welcome to react using react-i18next",
-  "aboutMe": "I am passionate about front-end development and web design, user experience and accessibility I develop Human-centered projects."
+  "position": "Frontend Developer",
+  "titleAboutMe": "About me",
+  "firstAboutMe": "Self-taught, passionate and persevering",
+  "secondAboutMe": "I'm a developer from Paris. I am particularly interested in the Javascript environment, and I am thirsty for knowledge",
+  "getToKnowMe": "Get to know me",
+  "titleSmallProjects": "Small Projects",
+  "titleSkills": "Skills",
+  "titleWork": "Work Experiences",
+  "titleSocials": "Social Networks",
+  "webIntegration": "Web Integration",
+  "contentManagement": "Content Management",
+  "others": "Others",
+  "email": "Send me directly and email",
+  "copySuccess": "Copied in the clipboard !",
+  "copyFail": "Failed to copy !"
 }

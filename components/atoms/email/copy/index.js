@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -8,12 +9,14 @@ const EMAIl = "sullytobias@gmail.com";
 const CopyEmail = () => {
   const [copySuccess, setCopySuccess] = useState(EMAIl);
 
+  const { t } = useTranslation();
+
   const copyToClipBoard = async (copyMe) => {
     try {
       await navigator.clipboard.writeText(copyMe);
-      setCopySuccess("Copied in the clipboard!");
+      setCopySuccess(t("copySuccess"));
     } catch (err) {
-      setCopySuccess("Failed to copy!");
+      setCopySuccess(t("copyFail"));
     } finally {
       setTimeout(() => setCopySuccess(EMAIl), 1000);
     }

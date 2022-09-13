@@ -1,9 +1,10 @@
 @import "../../../utils/styles/variables.scss";
+@import "../../../utils/styles/breakpoints.scss";
 
 .Section {
   display: flex;
   flex-wrap: wrap;
-  margin: 124px 0;
+  align-items: center;
   padding: 0 24px;
 }
 
@@ -11,7 +12,17 @@
   background-color: $black;
 }
 
-.asYPadding {
+.hasYPadding {
   padding-top: 64px;
   padding-bottom: 64px;
+}
+
+.hasTopMargin {
+  margin-top: 124px;
+}
+
+.isSmall {
+  @include small {
+    max-width: 75%;
+  }
 }

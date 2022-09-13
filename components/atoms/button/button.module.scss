@@ -1,4 +1,5 @@
 @import "../../../utils/styles/variables.scss";
+@import "../../../utils/styles/mixins.scss";
 
 .Button {
   display: flex;
@@ -8,24 +9,29 @@
   padding: 16px 32px;
   font-size: 15px;
   text-transform: uppercase;
-  cursor: pointer;
   border: 3px solid $black;
-  background-color: $black;
   color: $white;
-  transition: all 0.3s ease;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  @include retro-shadow-init($boxShadowColor: $grey);
 
   &:hover {
     background-color: $yellow;
     color: $black;
+
+    @include retro-shadow-hover;
   }
 }
 
 .isInvert {
-  background-color: $white;
   color: $black;
 
+  @include retro-shadow-init($isInvert: true, $boxShadowColor: $grey);
+
   &:hover {
-    background-color: $black;
     color: $white;
   }
 }

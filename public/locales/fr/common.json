@@ -1,3 +1,17 @@
 {
-  "title": "Bonjour to react using react-i18next"
+  "position": "Développeur Front-end",
+  "titleAboutMe": "A propos de moi",
+  "firstAboutMe": "Autodidacte, passionné et persévérant",
+  "secondAboutMe": "Je suis un développeur de Paris. Je suis particulièrement intéressé par l'environnement Javascript, et j'ai soif de connaissances.",
+  "getToKnowMe": "Apprenez à me connaître",
+  "titleSmallProjects": "Petits projets",
+  "titleSkills": "Compétences",
+  "titleWork": "Expériences professionnelles",
+  "titleSocials": "Réseaux sociaux",
+  "webIntegration": "Intégration web",
+  "contentManagement": "Gestion du contenu",
+  "others": "Autres",
+  "email": "Envoyez-moi directement et par courriel",
+  "copySuccess": "Copié dans le presse-papiers !",
+  "copyFail": "Échec de la copie !"
 }

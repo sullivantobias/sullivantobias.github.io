@@ -1,4 +1,5 @@
 @import "../../../utils/styles/variables.scss";
+@import "../../../utils/styles/mixins.scss";
 
 .Social {
   display: flex;
@@ -10,13 +11,11 @@
   width: fit-content;
   margin-right: 24px;
   cursor: pointer;
-  box-shadow: 0.6rem 0.6rem 0 $black;
 
-  transition: all 0.3s;
+  @include retro-shadow-init-simple;
 
   &:hover {
-    transform: translate(0.6rem, 0.6rem);
-    box-shadow: none;
+    @include retro-shadow-hover;
   }
 
   * {

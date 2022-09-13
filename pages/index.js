@@ -6,12 +6,60 @@ import Title from "../components/atoms/title";
 import Card from "../components/atoms/card";
 import Social from "../components/atoms/social";
 import CopyEmail from "../components/atoms/email/copy";
+import SendEmail from "../components/atoms/email/send";
 
 import Header from "../components/molecules/header";
 
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import SendEmail from "../components/atoms/email/send";
+
+import style from "./index.module.scss";
+
+const SMALL_PROJECTS = [
+  {
+    src: "/crypto.png",
+    label: "Crypto Tracker",
+  },
+  {
+    src: "/solar.png",
+    label: "Solar System",
+  },
+  {
+    src: "/chat.png",
+    label: "Firebase Chat",
+  },
+  {
+    src: "/weather.png",
+    label: "Weather App",
+  },
+  {
+    src: "/lunar.png",
+    label: "Lunar Phases",
+  },
+  {
+    src: "/github.png",
+    label: "Github Resume",
+  },
+  {
+    src: "/url.png",
+    label: "Url Shortener",
+  },
+];
+const WORK_EXPERIENCE = [
+  {
+    src: "/renault.png",
+    label: "Renault",
+  },
+  {
+    src: "/radley.png",
+    label: "Radley",
+  },
+  {
+    src: "/airbus.png",
+    label: "Airbus",
+  },
+];
+const SOCIALS = ["/github.svg", "/linkedin.svg"];
 
 export async function getStaticProps({ locale }) {
   return {
@@ -24,81 +72,102 @@ export async function getStaticProps({ locale }) {
 const Home = () => {
   const { t } = useTranslation();
 
+  const SKILLS = [
+    {
+      title: t("webIntegration"),
+      items: ["/html5.svg", "/css3.svg"],
+    },
+    {
+      title: "Front-end",
+      items: [
+        "/js.svg",
+        "/react.svg",
+        "/redux.svg",
+        "/mobx.svg",
+        "/handlebars.svg",
+      ],
+    },
+    {
+      title: "Back-end",
+      items: ["/nodejs.svg"],
+    },
+    {
+      title: t("contentManagement"),
+      items: ["/aem.svg"],
+    },
+    {
+      title: t("others"),
+      items: [
+        "/ts.svg",
+        "/graphql.svg",
+        "/jest.svg",
+        "/nextjs.svg",
+        "/mongodb.svg",
+      ],
+    },
+  ];
+
   return (
     <>
       <Header />
-      <Section>
-        <Title title="Sullivan Tobias" />
-        <Title title="I'm a Frontend Developer" tag={2} />
-        <Paragraph>
-          Self-taught of 22 years, I have been passionate about web development,
-          UI/UX and accessibility for 8 years.
-        </Paragraph>
-        <Button />
-        <Button isInvert />
-        <Icon src="/react.svg" width={50} height={50} />
-        <p>{t("title")}</p>
+      <Section hasTopMargin>
+        <div className={style.firstSection}>
+          <Title title="Sullivan Tobias" />
+          <Title title={t("position")} isHighlighted tag={2} />
+          <Button href="about" label={t("getToKnowMe")} />
+          <Button href="contact" isInvert label="Contact" />
+        </div>
+
+        <Icon src="/mountain.svg" height={200} width={200} />
       </Section>
 
-      <Section asYPadding isInvert>
-        <Title tag={2} isUnderlined isInvert title="About Me" />
-        <Paragraph isInvert>{t("aboutMe")}</Paragraph>
+      <Section isSmall id="about" hasTopMargin hasYPadding isInvert>
+        <Title tag={2} isUnderlined isInvert title={t("titleAboutMe")} />
+
+        <Paragraph isInvert>{t("firstAboutMe")}</Paragraph>
+        <Paragraph isInvert>{t("secondAboutMe")}</Paragraph>
       </Section>
 
-      <Section asYPadding>
-        <Title tag={2} isUnderlined title="Small Projects" />
-        <Card src="/crypto.png" label="Crypto Tracker" />
-        <Card src="/solar.png" label="Solar System" />
-        <Card src="/chat.png" label="Firebase Chat" />
-        <Card src="/weather.png" label="Weather App" />
-        <Card src="/lunar.png" label="Lunar Phases" />
-        <Card src="/github.png" label="Github Resume" />
-        <Card src="/url.png" label="Url Shortener" />
+      <Section id="small" hasYPadding>
+        <Title tag={2} isUnderlined title={t("titleSmallProjects")} />
+        {SMALL_PROJECTS.map(({ src, label }) => (
+          <Card key={label} src={src} label={label} />
+        ))}
       </Section>
 
-      <Section asYPadding isInvert>
-        <Title tag={2} isInvert isUnderlined title="Skills" />
+      <Section id="skills" hasYPadding isInvert>
+        <Title tag={2} isInvert isUnderlined title={t("titleSkills")} />
 
-        <Title tag={3} isInvert title="Web Integration" />
-        <Icon width={50} height={50} src="/html5.svg" />
-        <Icon width={50} height={50} src="/css3.svg" />
+        {SKILLS.map(({ title, items }) => (
+          <div key={title} className={style.Skill}>
+            <Title tag={3} isInvert title={title} />
 
-        <Title tag={3} isInvert title="Front-end" />
-        <Icon width={50} height={50} src="/js.svg" />
-        <Icon width={50} height={50} src="/react.svg" />
-        <Icon width={50} height={50} src="/redux.svg" />
-        <Icon width={50} height={50} src="/mobx.svg" />
-        <Icon width={50} height={50} src="/handlebars.svg" />
-
-        <Title tag={3} isInvert title="Back-end" />
-        <Icon width={50} height={50} src="/nodejs.svg" />
-
-        <Title tag={3} isInvert title="Content Management" />
-        <Icon width={50} height={50} src="/aem.svg" />
-
-        <Title tag={3} isInvert title="Others" />
-        <Icon width={50} height={50} src="/ts.svg" />
-        <Icon width={50} height={50} src="/graphql.svg" />
-        <Icon width={50} height={50} src="/jest.svg" />
-        <Icon width={50} height={50} src="/nextjs.svg" />
-        <Icon width={50} height={50} src="/mongodb.svg" />
+            {items.map((item) => (
+              <Icon key={item} width={50} height={50} src={item} />
+            ))}
+          </div>
+        ))}
       </Section>
 
-      <Section asYPadding>
-        <Title tag={2} isUnderlined title="Work experience" />
-        <Card src="/renault.png" label="Renault" />
-        <Card src="/radley.png" label="Radley" />
-        <Card src="/airbus.png" label="Airbus" />
+      <Section id="work" hasYPadding>
+        <Title tag={2} isUnderlined title={t("titleWork")} />
+
+        {WORK_EXPERIENCE.map(({ src, label }) => (
+          <Card key={label} src={src} label={label} />
+        ))}
       </Section>
 
-      <Section asYPadding>
-        <Title tag={2} isUnderlined title="Social networks" />
-        <Social icon="/github.svg" />
-        <Social icon="/linkedin.svg" />
+      <Section id="social" hasYPadding>
+        <Title tag={2} isUnderlined title={t("titleSocials")} />
+
+        {SOCIALS.map((item) => (
+          <Social key={item} icon={item} />
+        ))}
       </Section>
 
-      <Section isInvert asYPadding>
+      <Section id="contact" isInvert hasYPadding>
         <Title tag={2} isInvert isUnderlined title="Contact" />
+
         <CopyEmail />
         <SendEmail />
       </Section>
