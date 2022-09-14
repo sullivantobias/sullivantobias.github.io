@@ -11,7 +11,7 @@ const SendEmail = () => {
   return (
     <a className={style.Email} href="mailto:sullytobias@gmail.com">
       {t("email")}
-      <Image src="/email.svg" height={25} width={25} />
+      <Image alt="email" src="/email.svg" height={25} width={25} />
     </a>
   );
 };

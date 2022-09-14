@@ -69,7 +69,7 @@ const Burger = () => {
           passedVariants={variants}
         >
           {LINKS.map(({ label, href }) => (
-            <a onClick={handleClick} href={`#${href}`}>
+            <a key={href} onClick={handleClick} href={`#${href}`}>
               {label}
             </a>
           ))}

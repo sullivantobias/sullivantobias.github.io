@@ -25,7 +25,7 @@ const CopyEmail = () => {
   return (
     <div onClick={() => copyToClipBoard(EMAIl)} className={style.Email}>
       {copySuccess}
-      <Image src="/copy.svg" height={25} width={25} />
+      <Image alt="copy" src="/copy.svg" height={25} width={25} />
     </div>
   );
 };

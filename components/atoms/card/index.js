@@ -12,7 +12,7 @@ const Card = ({ src, label, href }) => (
     legacyBehavior={false}
     target="_blank"
   >
-    <Image src={src} layout="fill" objectFit="cover" />
+    <Image alt={label} src={src} layout="fill" objectFit="cover" />
     <span className={style.Overlay}>{label}</span>
   </Link>
 );

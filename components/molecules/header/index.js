@@ -9,7 +9,7 @@ import style from "./header.module.scss";
 
 const Header = () => (
   <div className={style.Header}>
-    <Image width={30} height={30} src="/logo.svg" />
+    <Image alt="logo" width={30} height={30} src="/logo.svg" />
     <LanguageSwitch />
     <Burger />
   </div>
