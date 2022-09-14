@@ -1,31 +1,18 @@
 import React from "react";
-import { useRouter } from "next/router";
+import { LanguageSwitcher, useLanguageQuery } from "next-export-i18n";
 
 import style from "./languageSwitch.module.scss";
 
 const LanguageSwitch = () => {
-  const router = useRouter();
+  const [query] = useLanguageQuery();
 
-  const { locale } = router;
-
-  const lang =
-    locale === "en"
-      ? { code: "fr", label: "English" }
-      : { code: "en", label: "Français" };
-
-  const changeLocale = () => {
-    const { pathname, asPath } = router;
-
-    router.push({ pathname }, asPath, {
-      locale: lang.code,
-      scroll: false,
-    });
-  };
+  const lang = query?.lang === "en" ? "fr" : "en";
+  const label = query?.lang === "en" ? "English" : "Français";
 
   return (
-    <button className={style.LanguageSwitch} onClick={changeLocale}>
-      {lang.label}
-    </button>
+    <LanguageSwitcher lang={lang}>
+      <button className={style.LanguageSwitch}>{label}</button>
+    </LanguageSwitcher>
   );
 };
 

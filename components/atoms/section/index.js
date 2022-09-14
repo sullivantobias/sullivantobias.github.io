@@ -21,17 +21,11 @@ const Section = ({
       [style.hasTopMargin]: hasTopMargin,
       [style.isSmall]: isSmall,
     })}
-    initial="hidden"
-    whileInView="visible"
+    initial={{ x: -300 }}
+    whileInView={{ x: 0 }}
     viewport={{ once: true }}
-    transition={{ type: "spring", bounce: 0.4, duration: 0.5 }}
-    variants={{
-      visible: { opacity: 1, scale: 1 },
-      hidden: { opacity: 0, scale: 0 },
-    }}
   >
-    {" "}
-    {children}{" "}
+    {children}
   </motion.div>
 );
 

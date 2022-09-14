@@ -1,3 +1,5 @@
+import { useTranslation } from "next-export-i18n";
+
 import Button from "../components/atoms/button";
 import Icon from "../components/atoms/icon";
 import Paragraph from "../components/atoms/paragraph";
@@ -9,9 +11,6 @@ import CopyEmail from "../components/atoms/email/copy";
 import SendEmail from "../components/atoms/email/send";
 
 import Header from "../components/molecules/header";
-
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import style from "./index.module.scss";
 
@@ -79,14 +78,6 @@ const SOCIALS = [
     href: "https://www.linkedin.com/in/sullivan-tobias-340807157",
   },
 ];
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale)),
-    },
-  };
-}
 
 const Home = () => {
   const { t } = useTranslation();

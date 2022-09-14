@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import classNames from "classnames";
 
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 
 import Layout from "../../../utils/layout";
 

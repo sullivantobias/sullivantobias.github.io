@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 
 import style from "../email.module.scss";
 
