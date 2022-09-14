@@ -19,47 +19,66 @@ const SMALL_PROJECTS = [
   {
     src: "/crypto.png",
     label: "Crypto Tracker",
+    href: "https://sullivantobias.github.io/Crypto-Tracker/",
   },
   {
     src: "/solar.png",
     label: "Solar System",
+    href: "https://sullivantobias.github.io/solar-system/",
   },
   {
     src: "/chat.png",
     label: "Firebase Chat",
+    href: "https://sullivantobias.github.io/chat/",
   },
   {
     src: "/weather.png",
     label: "Weather App",
+    href: "https://sullivantobias.github.io/weather-app/",
   },
   {
     src: "/lunar.png",
     label: "Lunar Phases",
+    href: "https://sullivantobias.github.io/moon-phase/",
   },
   {
     src: "/github.png",
     label: "Github Resume",
+    href: "https://sullivantobias.github.io/github-resume/",
   },
   {
     src: "/url.png",
     label: "Url Shortener",
+    href: "https://url-shortener-st.herokuapp.com/",
   },
 ];
 const WORK_EXPERIENCE = [
   {
     src: "/renault.png",
     label: "Renault",
+    href: "https://www.renault.fr/",
   },
   {
     src: "/radley.png",
     label: "Radley",
+    href: "https://radley.co.uk/",
   },
   {
     src: "/airbus.png",
     label: "Airbus",
+    href: "https://www.airbus.com/en",
   },
 ];
-const SOCIALS = ["/github.svg", "/linkedin.svg"];
+const SOCIALS = [
+  {
+    icon: "/github.svg",
+    href: "https://github.com/sullivantobias",
+  },
+  {
+    icon: "/linkedin.svg",
+    href: "https://www.linkedin.com/in/sullivan-tobias-340807157",
+  },
+];
 
 export async function getStaticProps({ locale }) {
   return {
@@ -130,8 +149,8 @@ const Home = () => {
 
       <Section id="small" hasYPadding>
         <Title tag={2} isUnderlined title={t("titleSmallProjects")} />
-        {SMALL_PROJECTS.map(({ src, label }) => (
-          <Card key={label} src={src} label={label} />
+        {SMALL_PROJECTS.map(({ src, label, href }) => (
+          <Card href={href} key={label} src={src} label={label} />
         ))}
       </Section>
 
@@ -152,16 +171,16 @@ const Home = () => {
       <Section id="work" hasYPadding>
         <Title tag={2} isUnderlined title={t("titleWork")} />
 
-        {WORK_EXPERIENCE.map(({ src, label }) => (
-          <Card key={label} src={src} label={label} />
+        {WORK_EXPERIENCE.map(({ src, label, href }) => (
+          <Card href={href} key={label} src={src} label={label} />
         ))}
       </Section>
 
       <Section id="social" hasYPadding>
         <Title tag={2} isUnderlined title={t("titleSocials")} />
 
-        {SOCIALS.map((item) => (
-          <Social key={item} icon={item} />
+        {SOCIALS.map(({ icon, href }) => (
+          <Social href={href} key={href} icon={icon} />
         ))}
       </Section>
 
@@ -170,6 +189,10 @@ const Home = () => {
 
         <CopyEmail />
         <SendEmail />
+
+        <Paragraph isCredit isInvert>
+          © {new Date().getFullYear()} SULLIVAN TOBIAS
+        </Paragraph>
       </Section>
     </>
   );

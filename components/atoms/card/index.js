@@ -5,10 +5,10 @@ import Link from "next/link";
 
 import style from "./card.module.scss";
 
-const Card = ({ src, label }) => (
+const Card = ({ src, label, href }) => (
   <Link
     className={style.Card}
-    href="https://url-shortener-st.herokuapp.com/"
+    href={href}
     legacyBehavior={false}
     target="_blank"
   >
