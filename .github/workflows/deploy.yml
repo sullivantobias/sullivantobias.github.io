@@ -22,11 +22,11 @@ jobs:
 
       - name: Build
         run: |
-          unset CI
-          yarn
-          yarn build
+          npm i
+          npm run build
+          npm run export
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./build
+          publish_dir: ./out
