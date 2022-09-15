@@ -7,6 +7,7 @@
   font-size: 1.2rem;
   margin: auto;
   border: 3px solid $black;
+  color: $black;
   cursor: pointer;
 
   @include retro-shadow-init($isInvert: true);

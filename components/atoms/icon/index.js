@@ -5,7 +5,13 @@ import style from "./icon.module.scss";
 
 const Icon = ({ src, height, width }) => (
   <span className={style.Icon}>
-    <Image className={style.Icon} width={width} height={height} src={src} />
+    <Image
+      priority
+      className={style.Icon}
+      width={width}
+      height={height}
+      src={src}
+    />
   </span>
 );
 
