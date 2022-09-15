@@ -21,8 +21,8 @@ const Section = ({
       [style.hasTopMargin]: hasTopMargin,
       [style.isSmall]: isSmall,
     })}
-    initial={{ x: -300 }}
-    whileInView={{ x: 0 }}
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
     viewport={{ once: true }}
   >
     {children}

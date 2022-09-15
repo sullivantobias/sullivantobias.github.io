@@ -9,6 +9,10 @@ body {
   font-family: "Bangers";
   letter-spacing: 2px;
   scroll-behavior: smooth;
+
+  &.isBurgerOpen {
+    overflow: hidden;
+  }
 }
 
 a {

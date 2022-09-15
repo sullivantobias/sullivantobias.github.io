@@ -9,11 +9,16 @@ import Layout from "../../../utils/layout";
 import style from "./burger.module.scss";
 
 const Burger = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => setOpen(!open);
-
   const { t } = useTranslation();
+
+  const [isBurgerOpen, setBurgerOpen] = useState(false);
+
+  const handleBurger = () => {
+    setBurgerOpen((prev) => {
+      document.body.classList[prev ? "remove" : "add"]("isBurgerOpen");
+      return !prev;
+    });
+  };
 
   const LINKS = [
     {
@@ -53,23 +58,23 @@ const Burger = () => {
     <>
       <button
         className={classNames(style.Burger, {
-          [style.Open]: open,
+          [style.Open]: isBurgerOpen,
         })}
-        onClick={handleClick}
+        onClick={handleBurger}
       >
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      {open && (
+      {isBurgerOpen && (
         <Layout
           className={style.Menu}
           passedTransition={transitions}
           passedVariants={variants}
         >
           {LINKS.map(({ label, href }) => (
-            <a key={href} onClick={handleClick} href={`#${href}`}>
+            <a key={href} onClick={handleBurger} href={`#${href}`}>
               {label}
             </a>
           ))}

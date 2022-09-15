@@ -7,7 +7,7 @@ const LanguageSwitch = () => {
   const [query] = useLanguageQuery();
 
   const lang = query?.lang === "en" ? "fr" : "en";
-  const label = query?.lang === "en" ? "English" : "Français";
+  const label = query?.lang === "en" ? "Français" : "English";
 
   return (
     <LanguageSwitcher lang={lang}>

@@ -16,7 +16,7 @@
   + span {
     display: none;
 
-    @include small {
+    @include medium {
       display: block;
     }
   }
